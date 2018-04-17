@@ -2,7 +2,7 @@ var mongoose   = require('mongoose'),
     secrets    = require('./secrets');
 
 var db = mongoose.connection;
-mongoose.connect(secrets.db);
+mongoose.connect(secrets.db, { useMongoClient: true });
 
 module.exports = {
   dbconnect: function(){
